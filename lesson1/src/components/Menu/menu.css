@@ -1,0 +1,20 @@
+ul li{
+    text-decoration-line: none;
+    list-style: none;
+}
+.jc-fs {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-right: 40px;
+}
+.menu-link {
+    margin-left: 16px;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.menu-link a {
+    text-decoration-line: none;
+}
