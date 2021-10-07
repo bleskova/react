@@ -1,26 +1,38 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import Menu from "./components/Menu/Menu";
-import Content from "./components/Content/Content";
+import Block from "./components/Block"
+
 import './App.css';
 
 class Main extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            likes: 0,
+            step: 10,
+            move: 0
+        }
+        this.changeLikes = this.changeLikes.bind(this);
+        this.onMove = this.onMove.bind(this)
+    }
+    changeLikes(step){
+        this.setState({
+            likes: this.state.likes + step
+        })
+    }
+    onMove(){
+        const {move, step} = this.state
+        this.setState({
+            move: move + step
+        })
+    }
     render() {
-        const navMenu = ['о нас',
-        'послуги',
-        'команда',
-        'публикації',
-        'контакти'];
+        const {likes, move} = this.state
         return (
             <div>
-                <Header />
-                <div className="flex" >
-                    <Menu menu={navMenu}/>
-                    <Content 
-                        title={'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-                        }/>
-                </div>
-
+                <p>{likes}</p>
+                <Block move={move}/>
+                <button onClick={(step) => this.changeLikes(10)}>touch me!</button>
+                <button onClick={this.onMove}>touch me!</button>
             </div>
         )
     }
