@@ -10,3 +10,4 @@ class Block extends React.Component{
         )
     }
 }
+export default Block;
