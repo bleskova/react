@@ -4,7 +4,7 @@ import './block.css'
 class Block extends React.Component{
 
     render() {
-        const {move} = this.props;
+        const {move} = this.props
         return(
             <div className="block" style={{left: move}}></div>
         )
