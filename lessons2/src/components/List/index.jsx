@@ -1,3 +1,4 @@
+import { findByLabelText } from "@testing-library/react";
 import React from "react";
 import './index.css'
 
@@ -6,11 +7,17 @@ class List extends React.Component{
         super(props)
     }
     render() {
-        const {task} = this.props
+        const {task} = this.props;
+        const style = {
+            display: 'flex',
+            alignItems: 'center',
+            margin: '5px'
+        }
         return(
-            <div>
-                <p>{task.title}</p>
-                <p>{task.id}</p>
+            <div style={style}>
+                <span>{1+task.id}.   {task.title}     </span>
+                {task.done ? <div> &#9989; </div> : <div>  &#9745; </div> }
+                {!task.done && <div>  ✘ </div>}
             </div>
         )
     }

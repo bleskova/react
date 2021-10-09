@@ -6,12 +6,11 @@ class Task extends React.Component{
         super(props)
     }
     render() {
-        const {task} = this.props
+        const {addChange} = this.props;
         return(
-            <div>
-                <p>{task.title}</p>
-                
-            </div>
+            <>
+            <button  onClick={addChange}>ADD task</button>
+            </>
         )
     }
 }
