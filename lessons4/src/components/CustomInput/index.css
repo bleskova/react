@@ -1,0 +1,9 @@
+.block {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 140px;
+    left: 0;
+    background: red;
+  }
+  

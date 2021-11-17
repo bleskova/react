@@ -1,7 +1,4 @@
 import React from "react";
-import CustomInput from "./components/CustomInput/index";
-import List from "./components/List/index";
-import Task from "./components/Task/index";
 
 import './App.css';
 
@@ -14,7 +11,6 @@ class Main extends React.Component{
             total: 0,
         }
         this.addCart = this.addCart.bind(this)
-
     }
     componentDidMount() {
         fetch('https://fakestoreapi.com/products')
@@ -57,7 +53,3 @@ class Main extends React.Component{
 }
 
 export default Main;
-
-// CustomInput.tsx       // Форма для добавления новой задачи
-//     Task.tsx        // Задача
-//     List.tsx        // Список задач
